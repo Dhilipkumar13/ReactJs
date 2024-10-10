@@ -10,16 +10,18 @@ class Counters extends Component {
         ]
      }
     deleteven = (counterId) =>{
-        console.log("Hai");
-        const counters = this.state.counters.filter(c => c.id!= counterId );
-        this.state.counters = {counters};
-    } 
+      //  console.log("Hai");
+        const counters = this.state.counters.filter(c => c.id!== counterId );
+        this.setState({counters});
+    }; 
     render() { 
         return (
             <div>
             <h1>Nav Bar: {}</h1>
-            {this.state.counters.map(counter => <Counter key={counter.id} value={counter.value}  onDelete ={this.deleteven } >
-                <h4>Title #{this.state.counters.id} </h4></Counter> )}
+            {
+                this.state.counters.map(counter => <Counter key={counter.id} counter= {counter}  onDelete ={ this.deleteven } >
+                <h4>Title #{this.state.counters.id} </h4></Counter> )
+            }
             </div>
         );
     }
