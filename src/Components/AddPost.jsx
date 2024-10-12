@@ -1,6 +1,8 @@
+import { useState } from "react"
 import PostForm from "./PostForm"
 
 const AddPost = () => {
+
   return (
     <div>
         <h2>Add new post</h2>
